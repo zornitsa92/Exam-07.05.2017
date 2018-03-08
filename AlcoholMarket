@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AlcoholMarket
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double wiskeyPrice = double.Parse(Console.ReadLine());
+            double beer = double.Parse(Console.ReadLine());
+            double wine = double.Parse(Console.ReadLine());
+            double rakia = double.Parse(Console.ReadLine());
+            double wiskey = double.Parse(Console.ReadLine());
+
+            double rakiaPrice = wiskeyPrice / 2;
+            double winePrice = rakiaPrice - (rakiaPrice * 0.4);
+            double beerPrice = rakiaPrice - (rakiaPrice * 0.8);
+
+            double total = (rakia * rakiaPrice) + (wiskeyPrice * wiskey) + (wine * winePrice) + (beer * beerPrice);
+
+            Console.WriteLine($"{total:f2}");
+
+        }
+    }
+}
