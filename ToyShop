@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ToyShop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double vacationprice = double.Parse(Console.ReadLine());
+            int puzzels = int.Parse(Console.ReadLine());
+            int dolls = int.Parse(Console.ReadLine());
+            int bears = int.Parse(Console.ReadLine());
+            int minions = int.Parse(Console.ReadLine());
+            int trucks = int.Parse(Console.ReadLine());
+
+            double puzzelPrice = 2.6;
+            double dollPrice = 3;
+            double bearPrice = 4.1;
+            double minionPrice = 8.2;
+            double truckPrice = 2;
+
+            double totalPrice = (puzzelPrice*puzzels) + (dolls*dollPrice) + (bearPrice*bears) + (minions*minionPrice) + (truckPrice*trucks);            
+            double totalToys = puzzels + dolls + bears + minions + trucks;
+
+            if (totalToys >= 50)
+            {
+                totalPrice -= totalPrice * 0.25;
+            }
+            totalPrice -= totalPrice * 0.1;
+
+            if (totalPrice >= vacationprice)
+            {
+                double diff = totalPrice - vacationprice;
+                Console.WriteLine($"Yes! {diff:f2} lv left.");
+            }
+            else
+            {
+                double diff = vacationprice - totalPrice;
+                Console.WriteLine($"Not enough money! {diff:f2} lv needed.");
+            }
+
+        }
+    }
+}
