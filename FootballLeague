@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FootballLeague
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double stadion = double.Parse(Console.ReadLine());
+            double fans = double.Parse(Console.ReadLine());
+
+            double sumA = 0;
+            double sumB = 0;
+            double sumV = 0;
+            double sumG = 0;
+
+            for (int i = 0; i < fans; i++)
+            {
+                string sector = Console.ReadLine();
+                if (sector == "A")
+                {
+                    sumA++;                    
+                }
+                else if (sector == "B")
+                {
+                    sumB++;
+                }
+                else if (sector == "V")
+                {
+                    sumV++;
+                }
+                else
+                {
+                    sumG++;
+                }
+
+            }
+            sumA = (sumA / fans) * 100;
+            sumB = (sumB / fans) * 100;
+            sumV = (sumV / fans) * 100;
+            sumG = (sumG / fans) * 100;
+
+            double percentStadion = (fans / stadion) * 100;
+
+            Console.WriteLine($"{sumA:f2}%");
+            Console.WriteLine($"{sumB:f2}%");
+            Console.WriteLine($"{sumV:f2}%");
+            Console.WriteLine($"{sumG:f2}%");
+            Console.WriteLine($"{percentStadion:f2}%");
+
+        }
+    }
+}
